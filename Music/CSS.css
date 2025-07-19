@@ -1,0 +1,146 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+  z-index: 1;
+  pointer-events: none;
+}
+
+nav.nav-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(0,0,0,1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+nav.nav-bar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav.nav-bar a:hover {
+  color: #ce22c0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dd65b5;
+}
+
+.center-container {
+  height: 108vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-text {
+  font-size: 3em;
+  font-weight: 800;
+  text-shadow: 2px 2px 6px #dd65b5;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background-color: #dd65b5;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #961284;
+}
+
+#music-section {
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+  font-weight: 600;
+  z-index: 0;
+  position: relative;
+}
+
+#music-section img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  opacity: 0.3;
+  object-fit: cover;
+}
+
+/* Sonic Boom Ripple Style */
+.ripple {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ripple span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  animation: boom 2s ease-out infinite;
+}
+
+.ripple span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.ripple span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes boom {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(2.5);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
