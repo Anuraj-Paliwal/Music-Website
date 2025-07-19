@@ -1,0 +1,225 @@
+/* Import Montserrat if needed */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #1d012b, #320b46);
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+/* Dark overlay */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Navigation bar */
+nav.nav-bar,
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(0,0,0,1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+nav.nav-bar a,
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav.nav-bar a:hover,
+nav ul li a:hover {
+  color: #ce22c0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dd65b5;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .auth-buttons a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+nav .auth-buttons .login {
+  background-color: #dd65b5;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav .auth-buttons .login:hover {
+  background-color: #961284;
+}
+
+/* Hero/landing content */
+.center-container,
+.content {
+  height: 90vh; /* Reduced from 108vh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding-top: 80px; /* Optional: adjust this too */
+}
+
+.welcome-text,
+.content h1 {
+  font-size: 3em;
+  font-weight: 800;
+  text-shadow: 2px 2px 6px #dd65b5;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.content p {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #D3D3D3;
+}
+
+.cta-button,
+.start-btn {
+  background-color: #dd65b5;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.start-btn:hover {
+  background-color: #961284;
+}
+
+/* Decorative background with wave */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(29, 1, 43, 0.8), rgba(50, 11, 70, 0.8)),
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%23dd65b5" fill-opacity="0.2" d="M0,128L48,144C96,160,192,192,288,192C384,192,480,160,576,149.3C672,139,768,149,864,149.3C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"%3E%3C/path%3E%3C/svg%3E');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Decorative image holder */
+.image-placeholder {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==') no-repeat center;
+  background-size: contain;
+  z-index: 1;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ripple span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  animation: boom 2s ease-out infinite;
+}
+
+.ripple span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.ripple span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes boom {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(2.5);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Optional section (music showcase) */
+#music-section {
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+  font-weight: 600;
+  z-index: 0;
+  position: relative;
+}
+
+#music-section img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  opacity: 0.3;
+  object-fit: cover;
+}
