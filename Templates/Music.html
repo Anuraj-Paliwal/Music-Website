@@ -5,78 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Music Haven</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS.css') }}">
-  <style>
-    /* Basic Dropdown Styles */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-btn {
-      background-color: #333;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #444;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #555;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .profile-btn {
-      background-color: #222;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-left: 20px;
-    }
-
-    .profile-btn:hover {
-      background-color: #444;
-    }
-
-    .nav-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
-      background-color: #222;
-    }
-
-    .nav-bar .logo {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
-
   <div class="overlay"></div>
-
   <nav class="nav-bar">
     <div class="logo">Music</div>
     <div style="display: flex; align-items: center;">
@@ -95,7 +26,7 @@
 
   <div class="center-container">
     <h1 class="welcome-text">Welcome</h1>
-    <button class="cta-button" id="explore-btn">Explore Now</button>
+    <a href="#Music_Section"><button class="cta-button" id="explore-btn">Explore Now</button></a>
   </div>
 
   <!-- Ripples -->
@@ -106,10 +37,16 @@
   <div class="ripple" style="bottom: 30%; right: 10%;"><span></span><span></span><span></span></div>
   <div class="ripple" style="bottom: 30%; right: 92%;"><span></span><span></span><span></span></div>
 
-  <section id="music-section">
-    <img src="https://media.istockphoto.com/id/161838634/photo/rock-concert.jpg?s=612x612&w=0&k=20&c=ffT8W7fCeWYhCqcVGihq1cB79kN-hRJ66r3RSJpMoEM=" alt="Rock Concert Background" />
-  </section>
-
+<a id="Music_Section">
+    <div class="button-section">
+      <button class="large-button">Discover</button>
+      <button class="large-button">Genres</button>
+      <button class="large-button">Top Charts</button>
+      <button class="large-button">Artists</button>
+      <button class="large-button">Albums</button>
+      <button class="large-button">Playlists</button>
+    </div>
+</a>
   <script src="{{ url_for('static', filename='Scripts.css') }}"></script>
 </body>
 </html>
