@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search | Music Haven</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS.css') }}">
+  <style>
+    .search-container {
+      margin-top: 140px;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+
+    .search-bar {
+      width: 80%;
+      max-width: 600px;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      background-color: #222;
+      color: white;
+      box-shadow: 0 0 10px rgba(221, 101, 181, 0.3);
+    }
+
+    .search-bar::placeholder {
+      color: #aaa;
+    }
+
+    .search-button-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      padding: 80px 40px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .large-button {
+      padding: 50px 0;
+      font-size: 22px;
+      background-color: #dd65b5;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 20px rgba(221, 101, 181, 0.4);
+    }
+
+    .large-button:hover {
+      background-color: #961284;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="nav-bar">
+    <div class="logo">Music</div>
+    <div style="display: flex; align-items: center;">
+      <div class="dropdown">
+        <button class="dropdown-btn">Menu</button>
+        <div class="dropdown-content">
+          <a href="/">Home</a>
+          <a href="/#Music_Section">Music</a>
+          <a href="/search">Search</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <a href="{{ url_for('profile') }}" class="profile-btn">Profile</a>
+    </div>
+  </nav>
+
+  <!-- Ripples (optional) -->
+  <div class="ripple" style="top: 32%; left: 22%;"><span></span><span></span><span></span></div>
+  <div class="ripple" style="top: 1%; left: -5%;"><span></span><span></span><span></span></div>
+  <div class="ripple" style="top: 18%; right: 23%;"><span></span><span></span><span></span></div>
+  <div class="ripple" style="bottom: 8%; left: 37%;"><span></span><span></span><span></span></div>
+  <div class="ripple" style="bottom: 30%; right: 10%;"><span></span><span></span><span></span></div>
+  <div class="ripple" style="bottom: 30%; right: 92%;"><span></span><span></span><span></span></div>
+
+  <!-- Search Area -->
+  <div class="search-container">
+    <input class="search-bar" type="text" placeholder="Search for songs, artists, or genres..." />
+  </div>
+
+  <!-- Placeholder Button Grid -->
+  <div class="search-button-section">
+    <button class="large-button">Suggested 1</button>
+    <button class="large-button">Suggested 2</button>
+    <button class="large-button">Suggested 3</button>
+    <button class="large-button">Suggested 4</button>
+    <button class="large-button">Suggested 5</button>
+    <button class="large-button">Suggested 6</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='Scripts.js') }}"></script>
+</body>
+</html>

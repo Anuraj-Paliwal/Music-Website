@@ -29,14 +29,14 @@ nav.nav-bar {
   z-index: 10;
 }
 
-nav.nav-bar a {
+nav.nav-bar  {
   text-decoration: none;
   margin: 0 1rem;
   font-size: 1.1em;
   transition: color 0.3s ease;
 }
 
-nav.nav-bar a:hover {
+nav.nav-bar :hover {
   color: #ce22c0;
 }
 
