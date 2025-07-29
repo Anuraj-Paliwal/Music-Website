@@ -1,0 +1,33 @@
+<!-- /templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask Music Player</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="music-player">
+    <h2>Music Player 🎶</h2>
+    
+    <audio id="audio" preload="metadata">
+      <source src="{{ url_for('static', filename='media/song1.mp3') }}" type="audio/mp3">
+    </audio>
+
+    <div class="controls">
+      <button id="prev">⏮️</button>
+      <button id="playPause">▶️</button>
+      <button id="next">⏭️</button>
+    </div>
+    
+    <div class="progress">
+      <span id="currentTime">00:00</span>
+      <input type="range" id="progressBar" value="0" step="1">
+      <span id="duration">00:00</span>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

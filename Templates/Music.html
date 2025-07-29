@@ -39,15 +39,21 @@
 
 <a id="Music_Section">
     <div class="button-section">
+      {% set player_url = url_for('Player')%}
+      <button class="large-button">Discover</button>
+      <button class="large-button">Genres</button>
+      <button class="large-button">Top Charts</button>
       {% set search_url = url_for('search') %}
       <button class="large-button" onclick="window.location.href='{{ search_url }}'">Search</button>
       <button class="large-button">Followers</button>
       <button class="large-button">Hum</button>
       <button class="large-button">Artists</button>
+      <button class="large-button" onclick="window.location.href='{{ player_url }}'">Albums</button>
       <button class="large-button">Musmento</button>
       <button class="large-button">Playlists</button>
     </div>
 </a>
+  <script src="{{ url_for('static', filename='Scripts.js') }}"></script>
   <script src="{{ url_for('static', filename='Scripts.js') }}"></script>
 </body>
 </html>

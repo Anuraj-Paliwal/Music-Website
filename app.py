@@ -10,6 +10,9 @@ def landing():
 def profile():
     return render_template ('profile.html')
 
+@app.route('/player')
+def Player():
+    return render_template('Player.html')
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     return render_template ('Search.html')
